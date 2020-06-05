@@ -1,0 +1,1666 @@
+  [1m[35m (0.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (55.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (63.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT GET_LOCK('4877541228233818725', 0)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateUsers (20200430063402)
+  [1m[35m (43.1ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `password_digest` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200430063402')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2020-04-30 06:34:21', '2020-04-30 06:34:21')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('4877541228233818725')[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2020-04-30 17:09:47 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (31.9ms)
+Completed 200 OK in 228ms (Views: 128.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authenticate" for ::1 at 2020-04-30 17:10:08 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/authenticate"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/authenticate" for ::1 at 2020-04-30 20:22:26 +0530
+  [1m[35m (1.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 76ms (Views: 1.0ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (10.8ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`, `created_at`, `updated_at`) VALUES ('example@mail.com', '$2a$12$6kNI.hnzknWF3he1GwIVrO3sMVdtwMqNZ.3rFZF0nSlyvVsSEf6Ii', '2020-04-30 14:57:19', '2020-04-30 14:57:19')[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/authenticate" for ::1 at 2020-04-30 20:28:56 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"example@mail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"example@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'example@mail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'example@mail.com' LIMIT 1[0m
+Completed 200 OK in 667ms (Views: 0.2ms | ActiveRecord: 13.5ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`) VALUES ('xyz@gmail.com', '$2a$12$uEIPJ9iIPFzFnXfNJXdvOeqAwzIQEd3cjJgLvYx7.2iteu6Gq3mSG')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Started OPTIONS "/authenticate" for ::1 at 2020-05-01 10:54:49 +0530
+  [1m[35m (1.2ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (16.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/authenticate"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/authenticate" for ::1 at 2020-05-01 11:10:30 +0530
+  [1m[35m (3.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@g.com", "password_digest"=>"[FILTERED]", "authentication"=>{"email"=>"aman@g.com", "password_digest"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@g.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 64.9ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/commands/authenticate_user.rb:19:in `user'
+app/commands/authenticate_user.rb:10:in `call'
+app/controllers/authentication_controller.rb:5:in `authenticate'
+Started POST "/authenticate" for ::1 at 2020-05-01 11:15:01 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@g.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@g.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.6ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@g.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.6ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/commands/authenticate_user.rb:19:in `user'
+app/commands/authenticate_user.rb:10:in `call'
+app/controllers/authentication_controller.rb:5:in `authenticate'
+Started POST "/authenticate" for ::1 at 2020-05-01 11:16:56 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"aman@g.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@g.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@g.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms)
+
+
+  
+BCrypt::Errors::InvalidHash (invalid hash):
+  
+app/commands/authenticate_user.rb:19:in `user'
+app/commands/authenticate_user.rb:10:in `call'
+app/controllers/authentication_controller.rb:5:in `authenticate'
+Started POST "/authenticate" for ::1 at 2020-05-01 11:17:40 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"example@mail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"example@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'example@mail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'example@mail.com' LIMIT 1[0m  [["email", "example@mail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1171ms (Views: 0.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-01 11:18:14 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"example@mail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"example@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'example@mail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 594ms (Views: 0.4ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-01 11:21:47 +0530
+  [1m[35m (0.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@g.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@g.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@g.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 15.3ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x3507000>):
+  
+app/commands/authenticate_user.rb:19:in `user'
+app/commands/authenticate_user.rb:10:in `call'
+app/controllers/authentication_controller.rb:5:in `authenticate'
+Started POST "/authenticate" for ::1 at 2020-05-01 11:22:31 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"aman@g.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@g.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@g.com' LIMIT 1[0m
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 3.3ms)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User:0x59837d0>):
+  
+app/commands/authenticate_user.rb:19:in `user'
+app/commands/authenticate_user.rb:10:in `call'
+app/controllers/authentication_controller.rb:5:in `authenticate'
+Started POST "/register" for ::1 at 2020-05-01 12:17:33 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (C:/Sites/project/app/controllers/registration_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/registration_controller.rb:13: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/register" for ::1 at 2020-05-01 12:20:15 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RegistrationController#register as */*
+  Parameters: {"email"=>"aman@g.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"aman@g.com", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 27ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for ::1 at 2020-05-01 12:25:43 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by RegistrationController#register as */*
+  Parameters: {"email"=>"aman@g.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"aman@g.com", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 11ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for ::1 at 2020-05-01 12:53:45 +0530
+  [1m[35m (0.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RegistrationController#register as */*
+  Parameters: {"email"=>"aman@g.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"aman@g.com", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 18ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for ::1 at 2020-05-01 12:54:03 +0530
+Processing by RegistrationController#register as */*
+  Parameters: {"email"=>"amanq@g.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"amanq@g.com", "password"=>"[FILTERED]"}}
+Filter chain halted as :authenticate_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/register" for ::1 at 2020-05-01 15:06:17 +0530
+  [1m[35m (4.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RegistrationController#register as */*
+  Parameters: {"email"=>"amanq@g.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"amanq@g.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.3ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`) VALUES ('amanq@g.com', '$2a$12$S3ws9K791Og0N2hVRuug2uf874ww4xK94CdBo51Q/vmMCvGGKC7fu')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 14219ms (ActiveRecord: 46.3ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<RegistrationController:0x3728418>
+Did you mean?  @user):
+  
+app/controllers/registration_controller.rb:5:in `register'
+Started POST "/register" for ::1 at 2020-05-01 15:07:35 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by RegistrationController#register as */*
+  Parameters: {"email"=>"amanq@g.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"amanq@g.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.9ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`) VALUES ('amanq@g.com', '$2a$12$duW8HiNozTszyXwYhRSeLemTWeQppfLR2mUDPwT2kp/XAZ1YyeIo.')[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 370ms (Views: 1.8ms | ActiveRecord: 17.6ms)
+
+
+Started POST "/register" for ::1 at 2020-05-01 15:16:22 +0530
+Processing by RegistrationController#register as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.2ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`) VALUES ('aman@gmail.com', '$2a$12$0IXjF3W50XQrBiW7TSIjaeKYu9S2x66akEl9uozlHPZRMa6ZBRRtC')[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 618ms (Views: 0.5ms | ActiveRecord: 18.8ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-01 15:16:50 +0530
+  
+ArgumentError (Before process_action callback :authenticate_request has not been defined):
+  
+app/controllers/authentication_controller.rb:2:in `<class:AuthenticationController>'
+app/controllers/authentication_controller.rb:1:in `<top (required)>'
+Started POST "/authenticate" for ::1 at 2020-05-01 15:17:38 +0530
+  
+ArgumentError (Before process_action callback :authenticate_request has not been defined):
+  
+app/controllers/authentication_controller.rb:2:in `<class:AuthenticationController>'
+app/controllers/authentication_controller.rb:1:in `<top (required)>'
+Started POST "/authenticate" for ::1 at 2020-05-01 15:19:47 +0530
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 748ms (Views: 0.3ms | ActiveRecord: 31.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-01 15:20:02 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1101ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-02 09:54:49 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (10.8ms)
+Completed 200 OK in 111ms (Views: 64.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2020-05-02 09:56:18 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/home"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/register" for ::1 at 2020-05-02 09:57:06 +0530
+Processing by RegistrationController#register as HTML
+  Parameters: {"email"=>"amanjazz03@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"amanjazz03@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (11.7ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`) VALUES ('amanjazz03@gmail.com', '$2a$12$WZ5Qh1Wseuah/T/VWIVG9.300aqSxG3FDlb2/C6hbmQW8cThj2SlW')[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10473ms (Views: 0.6ms | ActiveRecord: 58.3ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-02 09:57:35 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"amanjazz03@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"amanjazz03@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'amanjazz03@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 539ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-02 09:57:56 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"amanjazz03@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"amanjazz03@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'amanjazz03@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'amanjazz03@gmail.com' LIMIT 1[0m  [["email", "amanjazz03@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1182ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/register" for ::1 at 2020-05-08 19:25:22 +0530
+  [1m[35m (6.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (44.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RegistrationController#register as HTML
+  Parameters: {"email"=>"xys@gmail.ck", "password"=>"[FILTERED]", "registration"=>{"email"=>"xys@gmail.ck", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+Started POST "/register" for ::1 at 2020-05-08 19:25:38 +0530
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+Processing by RegistrationController#register as HTML
+  Parameters: {"email"=>"xys@gmail.ck", "password"=>"[FILTERED]", "registration"=>{"email"=>"xys@gmail.ck", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+  [1m[35mSQL (327.9ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`) VALUES ('xys@gmail.ck', '$2a$12$CllZkgmgKV5Xiy.p6oZjWe9YDI9XoSz2Tdg1ESQQvZS.QsqmHa6py')[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 12876ms (Views: 2.8ms | ActiveRecord: 385.9ms)
+
+
+  [1m[35m (5.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`) VALUES ('xys@gmail.ck', '$2a$12$VtRV.NZ2diUpBVU1WJO98OT1MgZ86bf9XXAwmwCvla/zv5/1vh7Ji')[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 413ms (Views: 0.6ms | ActiveRecord: 17.6ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-08 19:27:03 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1146ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-08 19:27:14 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 480ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-13 16:29:29 +0530
+  [1m[35m (4.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (19.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1361ms (Views: 0.4ms | ActiveRecord: 84.5ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-13 16:30:44 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1253ms (Views: 0.3ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-13 16:38:25 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1198ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-13 16:42:39 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1137ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-13 16:43:37 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1103ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-13 16:45:03 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1140ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-13 16:46:43 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1170ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-13 16:46:50 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1144ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-13 16:47:15 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1059ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 10:09:23 +0530
+  [1m[35m (12.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 730ms (Views: 0.3ms | ActiveRecord: 53.2ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 10:44:28 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (1.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1223ms (Views: 0.4ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 10:49:33 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 510ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 10:50:00 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1047ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 10:50:46 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 739ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 10:51:26 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 509ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 11:23:09 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1147ms (Views: 11.6ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 11:24:13 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1237ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 13:09:41 +0530
+  [1m[35m (5.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1387ms (Views: 0.6ms | ActiveRecord: 45.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 16:16:31 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1355ms (Views: 0.5ms | ActiveRecord: 53.8ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 16:17:12 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 591ms (Views: 0.2ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 16:19:00 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1079ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 16:19:57 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 518ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 17:16:56 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1312ms (Views: 0.5ms | ActiveRecord: 34.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 17:18:19 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 517ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 17:20:17 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 514ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 17:22:20 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 511ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 19:56:55 +0530
+  [1m[35m (4.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (23.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (14.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1353ms (Views: 0.4ms | ActiveRecord: 66.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 19:57:28 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 524ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 19:59:21 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 470ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 19:59:30 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1153ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 19:59:40 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1157ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-14 19:59:52 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1136ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 10:41:26 +0530
+  [1m[35m (3.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1289ms (Views: 0.5ms | ActiveRecord: 47.2ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 10:47:09 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1183ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 10:53:26 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 562ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 11:01:45 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1122ms (Views: 0.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 11:38:39 +0530
+  [1m[35m (2.9ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (29.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (19.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 940ms (Views: 0.5ms | ActiveRecord: 76.4ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 11:39:07 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1384ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-15 13:47:27 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (19.0ms)
+Completed 200 OK in 201ms (Views: 115.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 13:48:58 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 970ms (Views: 0.2ms | ActiveRecord: 32.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 13:50:40 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 841ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 17:06:05 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1365ms (Views: 0.4ms | ActiveRecord: 37.9ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 17:06:45 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 587ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 17:07:03 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 525ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 17:08:19 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 515ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 17:14:05 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 711ms (Views: 0.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 17:14:25 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1152ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-15 17:24:16 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1170ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 10:23:44 +0530
+  [1m[35m (3.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1268ms (Views: 0.5ms | ActiveRecord: 36.5ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 10:26:37 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (11.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 950ms (Views: 0.3ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 10:27:12 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 527ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 10:27:49 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1162ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 10:31:58 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1148ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 10:36:37 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 483ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 10:37:33 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 499ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 10:38:07 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1163ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 12:26:33 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1313ms (Views: 0.4ms | ActiveRecord: 35.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 12:53:29 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.8ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1035ms (Views: 0.4ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 12:54:01 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1069ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 13:07:01 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1155ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 13:13:48 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1049ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 13:15:55 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 467ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 13:20:02 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1151ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 15:01:46 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1088ms (Views: 0.9ms | ActiveRecord: 55.4ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 15:27:30 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1180ms (Views: 0.3ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 15:32:37 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1104ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 15:35:01 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1106ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 15:35:47 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 949ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 15:47:55 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 741ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 15:49:24 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 703ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 16:52:40 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 888ms (Views: 0.2ms | ActiveRecord: 37.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 16:58:55 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 777ms (Views: 5.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-18 17:09:25 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 678ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 12:04:58 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1206ms (Views: 0.5ms | ActiveRecord: 57.4ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 12:05:35 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 486ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 12:14:20 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 502ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 12:14:41 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 707ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 12:15:05 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 473ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 12:21:44 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1120ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 13:03:00 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 765ms (Views: 0.2ms | ActiveRecord: 18.0ms)
+
+
+Started POST "/register" for ::1 at 2020-05-19 13:26:15 +0530
+Processing by RegistrationController#register as HTML
+  Parameters: {"email"=>"amanjaiswal@gmail.com", "password"=>"[FILTERED]", "registration"=>{"email"=>"amanjaiswal@gmail.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :registration
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`) VALUES ('amanjaiswal@gmail.com', '$2a$12$71qkjlPj6bYQZC1TCkfcWuN93WSI66L6zR0LeDm/pcJJia2JkBltK')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6675ms (Views: 0.4ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 13:37:32 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 600ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 16:00:42 +0530
+  [1m[35m (6.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1330ms (Views: 0.3ms | ActiveRecord: 79.9ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 17:02:33 +0530
+  [1m[35m (3.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1194ms (Views: 0.4ms | ActiveRecord: 47.9ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 17:28:58 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 663ms (Views: 0.2ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 18:44:28 +0530
+  [1m[35m (3.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1274ms (Views: 0.4ms | ActiveRecord: 42.9ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 19:44:06 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 722ms (Views: 0.2ms | ActiveRecord: 28.6ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-19 19:48:51 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (1.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1113ms (Views: 10.4ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/register" for ::1 at 2020-05-19 19:49:07 +0530
+Processing by RegistrationController#register as HTML
+  Parameters: {"email"=>"aman1111@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "registration"=>{"email"=>"aman1111@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Unpermitted parameters: :isValid, :isError, :registration
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.9ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`) VALUES ('aman1111@gmail.com', '$2a$12$Nu9P2YWtTdCdwZX3qm0QKeSd.yXRRAoxgWtaqBkGPPE3aCSCn2wV.')[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9473ms (Views: 0.8ms | ActiveRecord: 13.9ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-20 14:11:31 +0530
+  [1m[35m (3.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 724ms (Views: 0.2ms | ActiveRecord: 20.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-20 17:03:40 +0530
+  [1m[35m (1.3ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1387ms (Views: 0.3ms | ActiveRecord: 92.8ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-20 18:39:30 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1111ms (Views: 0.3ms | ActiveRecord: 41.3ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-20 18:40:14 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 630ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-20 18:48:11 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1028ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-20 18:50:02 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1138ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-20 19:29:30 +0530
+  [1m[35m (4.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1088ms (Views: 0.4ms | ActiveRecord: 31.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-20 19:44:05 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 588ms (Views: 0.2ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-20 20:15:11 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 651ms (Views: 0.2ms | ActiveRecord: 23.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-20 21:13:47 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 931ms (Views: 0.3ms | ActiveRecord: 34.9ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-21 09:00:32 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1322ms (Views: 0.5ms | ActiveRecord: 47.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-21 10:50:31 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (2.1ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1282ms (Views: 2.2ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-21 11:26:25 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1239ms (Views: 0.6ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-21 11:29:04 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 957ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-28 19:38:43 +0530
+  [1m[35m (3.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 543ms (Views: 0.2ms | ActiveRecord: 26.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-28 21:13:07 +0530
+  [1m[35m (6.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1315ms (Views: 0.4ms | ActiveRecord: 27.5ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-28 21:20:20 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (1.7ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1218ms (Views: 0.2ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-28 21:24:03 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1271ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-28 21:27:19 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1172ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-29 11:13:15 +0530
+  [1m[35m (12.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1141ms (Views: 0.3ms | ActiveRecord: 48.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-29 11:21:30 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 626ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-05-29 11:35:25 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 975ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-01 15:50:53 +0530
+  [1m[35m (11.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (18.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (10.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1230ms (Views: 0.5ms | ActiveRecord: 55.0ms)
+
+
+Started GET "/" for ::1 at 2020-06-02 10:40:35 +0530
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (17.0ms)
+Completed 200 OK in 161ms (Views: 97.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-06-02 10:40:38 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/authenticate" for ::1 at 2020-06-02 10:40:45 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 801ms (Views: 0.2ms | ActiveRecord: 27.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-02 10:45:23 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 680ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-02 11:00:40 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 840ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-02 11:03:22 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 763ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 11:47:34 +0530
+  [1m[35m (10.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1363ms (Views: 0.6ms | ActiveRecord: 99.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 12:31:50 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (2.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 852ms (Views: 0.8ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 12:33:45 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 617ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 13:03:37 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 760ms (Views: 0.4ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 13:15:32 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 650ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 13:23:25 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 916ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 13:47:50 +0530
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 914ms (Views: 0.3ms | ActiveRecord: 49.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 14:05:06 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 645ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 14:36:09 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 587ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 15:23:38 +0530
+  [1m[35m (3.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+Completed 200 OK in 1032ms (Views: 0.3ms | ActiveRecord: 36.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 15:25:27 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (1.0ms)[0m  [1m[35mSET  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 811ms (Views: 0.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 17:07:32 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman11111@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman11111@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman11111@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 28ms (Views: 2.0ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 17:08:34 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"xyz1111@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"xyz1111@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'xyz1111@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 25ms (Views: 0.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 17:09:01 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1197ms (Views: 0.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 17:14:25 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 620ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 17:16:39 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman111344@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman111344@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman111344@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 45ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 17:17:02 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1165ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 17:17:36 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1156ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 17:19:18 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"akqs@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"akqs@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'akqs@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 25ms (Views: 0.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 17:19:38 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1135ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 18:02:14 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1148ms (Views: 1.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 18:10:24 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"aman@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'aman@gmail.com' LIMIT 1[0m  [["email", "aman@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 606ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/register" for ::1 at 2020-06-03 18:10:49 +0530
+Processing by RegistrationController#register as HTML
+  Parameters: {"email"=>"sahilssss@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "registration"=>{"email"=>"sahilssss@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+Unpermitted parameters: :isValid, :isError, :registration
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `users` (`email`, `password_digest`) VALUES ('sahilssss@gmail.com', '$2a$12$LTGyHNtd3UuK5SSJgt586ueECgcSWUm2h1zusugHCgoluQxLHy0/u')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10517ms (Views: 0.6ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/authenticate" for ::1 at 2020-06-03 18:11:56 +0530
+Processing by AuthenticationController#authenticate as HTML
+  Parameters: {"email"=>"sahilssss@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}, "authentication"=>{"email"=>"sahilssss@gmail.com", "password"=>"[FILTERED]", "isValid"=>false, "isError"=>{"email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sahilssss@gmail.com' LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sahilssss@gmail.com' LIMIT 1[0m  [["email", "sahilssss@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 1119ms (Views: 0.3ms | ActiveRecord: 1.5ms)
+
+
