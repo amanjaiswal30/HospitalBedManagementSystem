@@ -1,4 +1,6 @@
 # HospitalBedManagementSystem
 An application that can be used in complex hospital environments to automate the bed assignment process based on the availability of that particular bed
+## Working
+The registered user logs in the application by typing his/her credentials in the login page and an authentication request is sent to the respective api in the Ruby layer.Post authentication when a Patient Admit request is made from the Patient Form, a request is sent to the Bed Service which returns the attributes of a particular type of bed as required from a list of available beds of that particular type and in that process makes the availability of that particular bed to false, and upon receiving the attributes it associates that bed to the patient and sends a request to the patient service to store the patient details and the bed details associated to that patient.Finally when the user goes to the Dashboard,a request is made to the Patient Service which returns the list of registered patients and the bed attributes associated with each patient and displays it in the form of a table.
 ## Architecture
 ![Untitled Diagram](https://user-images.githubusercontent.com/61830764/83853620-2c805500-a733-11ea-8cf7-90aa32c3c3a3.jpg)
