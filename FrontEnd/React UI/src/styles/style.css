@@ -1,0 +1,55 @@
+
+.legend
+{
+
+  text-align: center;
+}
+.form
+{
+  width: 80%;
+  padding-left: 40%;
+  padding-top: 6%;
+  padding-right: 10%;
+
+}
+.legend1
+{
+  text-align: center;
+}
+.header
+{
+  text-align: center;
+}
+.form-group
+{
+  
+  text-align: left;
+}
+.table-head
+{
+  color: blue;
+}
+.typography
+{
+  text-align: center;
+}
+.input-name
+{
+  margin-left: 23%;
+}
+.input-address
+{
+  margin-left: 20%;
+}
+.input-reason
+{
+  margin-left: 5%;
+}
+.input-gender
+{
+  margin-left: 22%;
+}
+.input-request
+{
+  margin-left: 13%;
+}
